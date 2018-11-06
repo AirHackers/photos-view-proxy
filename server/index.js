@@ -9,7 +9,9 @@ var urlencodedParser = bodyParser.urlencoded({ extended: true });
 
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.get('/home/:id')
+app.get('/homes/:id', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'))
+})
 
 app.listen(port);
 
